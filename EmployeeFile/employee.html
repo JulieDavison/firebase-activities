@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Employee Data Management</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+
+      <!-- Firebase References -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+</head>
+
+<body>
+
+    <container>
+        <div class="col-md-12">
+            <div class="row justify-content-center">
+                <h1>Employee Data Management</h1>
+            </div>
+            <div class="row justify-content-center">
+                <h3>A Comprehensive Directory of Employee Billable Hours</h3>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Current Employees</p>
+                </div>
+                <div class="col-md-12">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Employee Name</th>
+                                <th scope="col">Role</th>
+                                <th scope="col">Start Date</th>
+                                <th scope="col">Months Worked</th>
+                                <th scope="col">Monthly Rate ($)</th>
+                                <th scope="col">Total Billed ($)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="specialTable">
+                            <tr>
+                                <td id="tableEmployee"></td>
+                                <td id="tableRole"></td>
+                                <td id="tableStartDate"></td>
+                                <td id="tableRate"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <form>
+                        <div class="row">
+                            <div class="form-group col-md-10">
+                                <label for="inputEmployee">Employee Name</label>
+                                <input type="text" class="form-control" id="inputEmployee" placeholder="Jane Doe">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-10">
+                                <label for="inputRole">Role</label>
+                                <input type="text" class="form-control" id="inputRole" placeholder="CEO">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-10">
+                                <label for="inputStartDate">Start Date (MM/DD/YYYY)</label>
+                                <input type="text" class="form-control" id="inputStartDate" placeholder="01/08/1989">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-10">
+                                <label for="inputRate">Monthly Rate</label>
+                                <input type="text" class="form-control" id="inputRate" placeholder="200000">
+                            </div>
+                        </div>
+                    </form>
+                    <button type="button" class="btn btn-primary submitEntry">Submit</button>
+                </div>
+            </div>
+        </div>
+    </container>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="./employee.js"></script>
+</body>
+
+</html>
